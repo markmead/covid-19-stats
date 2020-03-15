@@ -24,7 +24,10 @@
               </tr>
             </thead>
             <tbody>
-              <TableRow v-for="item in reports.data" :item="item" :key="item.objectid" />
+              <TableRow
+                v-for="edge in $page.reports.edges"
+                :item="edge"
+                :key="edge.node.id" />
             </tbody>
           </table>
         </div>
@@ -33,28 +36,32 @@
   </Layout>
 </template>
 
+<page-query>
+  query {
+    reports: allReports(sortBy: "reportDate") {
+      edges {
+        node {
+          id
+          reportDate
+          totalConfirmed
+          mainlandChina
+          otherLocations
+          totalRecovered
+        }
+      }
+    }
+  }
+</page-query>
+
 <script>
-  import axios from 'axios'
   import TableRow from '~/components/TableRow'
 
   export default {
     metaInfo: {
       title: 'Latest Reports'
     },
-    data() {
-      return {
-        reports: null
-      }
-    },
     components: {
       TableRow
-    },
-    async mounted() {
-      const reportsData =
-        await axios
-          .get('https://covid19.mathdro.id/api/daily')
-          .then(res => this.reports = res)
-
     }
   }
 </script>

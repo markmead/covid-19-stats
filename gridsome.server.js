@@ -9,10 +9,18 @@ const axios = require('axios')
 
 module.exports = function (api) {
   api.loadSource(async actions => {
-    const statsCollection = actions.addCollection('Stats')
-    const allData = await axios.get('https://covid19.mathdro.id/api')
+    const reportsCollection = actions.addCollection('Reports')
+    const reportsData = await axios.get('https://covid19.mathdro.id/api/daily')
 
-    statsCollection.addNode({...allData.data})
+    for(const reportData of reportsData.data) {
+      reportsCollection.addNode({
+        reportDate: reportData.reportDate,
+        totalConfirmed: reportData.totalConfirmed,
+        mainlandChina: reportData.mainlandChina,
+        otherLocations: reportData.otherLocations,
+        totalRecovered: reportData.totalRecovered,
+      })
+    }
   })
 
   api.createPages(({ createPage }) => {
