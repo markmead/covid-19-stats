@@ -1,11 +1,12 @@
 <template>
   <Layout title="Dashboard">
-    <ShortStats :stats="stats"/>
+    <div v-if="!stats">Loading</div>
+    <ShortStats v-else :stats="stats" />
   </Layout>
 </template>
 
 <script>
-import axios from 'axios'
+  import axios from 'axios'
   import ShortStats from '~/components/ShortStats'
 
   export default {
@@ -15,7 +16,6 @@ import axios from 'axios'
     data() {
       return {
         stats: '',
-        loading: false
       }
     },
     components: {
@@ -23,17 +23,10 @@ import axios from 'axios'
     },
     methods: {
       getStats() {
-        this.loading = true
         axios
           .get('https://covid19.mathdro.id/api')
-          .then(res => {
-            this.loading = false
-            this.stats = res.data
-          })
-          .catch(error => {
-            this.loading = false
-            console.log(error)
-          })
+          .then(res => (this.stats = res.data))
+          .catch(error => console.log(error))
       }
     },
     mounted() {
