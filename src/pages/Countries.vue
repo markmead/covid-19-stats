@@ -46,8 +46,8 @@
         return Object.filter(this.countries, ([country, code]) => country.toLowerCase().includes(this.search.toLowerCase()))
       }
     },
-    mounted() {
-      axios
+    async mounted() {
+      await axios
         .get('https://covid19.mathdro.id/api/countries')
         .then(res => this.countries = res.data.countries)
     }

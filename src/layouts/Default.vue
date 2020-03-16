@@ -17,7 +17,7 @@
             </div>
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
               <div class="flex-shrink-0 flex items-center px-4">
-                <g-image class="h-10 w-auto" src="~/cough.svg" alt="Cough" />
+                <g-image class="h-10 w-auto" src="~/cough.svg" alt="Cough" immediate="true" />
                 <span class="ml-2 text-lg font-medium">Coronavirus</span>
               </div>
               <nav class="mt-5 px-2">
@@ -36,13 +36,13 @@
               <div class="group block focus:outline-none">
                 <div class="flex items-center">
                   <div>
-                    <div class="text-sm leading-5 font-medium text-gray-500">
+                    <div class="text-xs leading-4 font-medium text-gray-500">
                       COVID-19 API from
                       <a href="https://github.com/mathdroid/covid-19-api" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">
                         mathdroid
                       </a>
                     </div>
-                    <div class="mt-2 text-sm leading-5 font-medium text-gray-500">
+                    <div class="mt-1 text-xs leading-4 font-medium text-gray-500">
                       Couch icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">www.flaticon.com</a>
                     </div>
                   </div>
@@ -61,7 +61,7 @@
         <div class="flex flex-col w-64 border-r border-gray-200 bg-white">
           <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
-              <g-image class="h-10 w-auto" src="~/cough.svg" alt="Cough" />
+              <g-image class="h-10 w-auto" src="~/cough.svg" alt="Cough" immediate="true" />
               <span class="ml-2 text-lg font-medium">Coronavirus</span>
             </div>
             <!-- Sidebar component, swap this element with another sidebar if you like -->
@@ -81,13 +81,13 @@
             <div class="group block focus:outline-none">
               <div class="flex items-center">
                 <div>
-                  <div class="text-sm leading-5 font-medium text-gray-500">
+                  <div class="text-xs leading-4 font-medium text-gray-500">
                     COVID-19 API from
                     <a href="https://github.com/mathdroid/covid-19-api" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">
                       mathdroid
                     </a>
                   </div>
-                  <div class="mt-2 text-sm leading-5 font-medium text-gray-500">
+                  <div class="mt-1 text-xs leading-4 font-medium text-gray-500">
                     Couch icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">www.flaticon.com</a>
                   </div>
                 </div>
