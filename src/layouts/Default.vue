@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen flex overflow-hidden bg-gray-100">
     <!-- Off-canvas menu for mobile -->
-    <div v-show="sidebarOpen" class="md:hidden">
+    <div v-show="sidebarOpen" class="lg:hidden">
       <div @click="sidebarOpen = false" v-show="sidebarOpen" class="fixed inset-0 z-30 transition-opacity ease-linear duration-300">
         <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
       </div>
@@ -56,7 +56,7 @@
     </div>
 
     <!-- Static sidebar for desktop -->
-    <div class="hidden md:flex md:flex-shrink-0">
+    <div class="hidden lg:flex lg:flex-shrink-0">
       <div class="flex flex-col w-64 border-r border-gray-200 bg-white">
         <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
           <div class="flex items-center flex-shrink-0 px-4">
@@ -96,7 +96,7 @@
       </div>
     </div>
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <div class="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
+      <div class="lg:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
         <button @click.stop="sidebarOpen = true" class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150">
           <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>

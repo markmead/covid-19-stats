@@ -11,7 +11,7 @@
         </p>
       </div>
       <div class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
-        <div>
+        <div class="mt-10 sm:mt-0">
           <p class="text-5xl leading-none font-extrabold text-white">
             {{ stats.confirmed.value | formatNumber }}
           </p>
@@ -19,7 +19,7 @@
             Confirmed
           </p>
         </div>
-        <div>
+        <div class="mt-10 sm:mt-0">
           <p class="text-5xl leading-none font-extrabold text-white">
             {{ stats.recovered.value | formatNumber }}
           </p>
@@ -27,7 +27,7 @@
             Recovered
           </p>
         </div>
-        <div>
+        <div class="mt-10 sm:mt-0">
           <p class="text-5xl leading-none font-extrabold text-white">
             {{ stats.deaths.value | formatNumber }}
           </p>
