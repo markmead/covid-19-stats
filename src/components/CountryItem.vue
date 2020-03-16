@@ -2,7 +2,8 @@
   <li>
     <g-link
       :to="/country/ + country.replace(/\s+/g, '-').toLowerCase()"
-      class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+      class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out"
+      tabindex="0">
       <div class="px-4 py-4 sm:px-6">
         <div class="flex items-center">
           <flag :iso="code.toLowerCase()" />

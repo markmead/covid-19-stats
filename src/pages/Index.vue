@@ -11,7 +11,7 @@
 
   export default {
     metaInfo: {
-      title: 'Coronavirus Dashboard'
+      title: 'Dashboard'
     },
     data() {
       return {

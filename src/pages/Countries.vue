@@ -10,7 +10,7 @@
           placeholder="Enter country name" />
       </div>
     </div>
-    <div class="bg-white shadow overflow-hidden sm:rounded-md">
+    <div class="bg-white shadow sm:rounded-md">
       <ul v-if="filteredCountries" class="md:grid md:grid-cols-2 lg:grid-cols-3">
         <CountryItem
           v-for="(key, value) in this.filteredCountries"
@@ -27,6 +27,9 @@
   import CountryItem from '~/components/CountryItem'
 
   export default {
+    metaInfo: {
+      title: 'Countries Affected'
+    },
     data() {
       return {
         countries: '',
