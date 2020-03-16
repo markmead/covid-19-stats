@@ -2,7 +2,7 @@
   <Layout :title="$context.title">
     <div v-if="loading">Loading</div>
     <NoData v-if="error" />
-    <ShortStats v-else :stats="stats" :title="$context.title" />
+    <ShortStats v-if="!loading && !error" :stats="stats" :title="$context.title" />
   </Layout>
 </template>
 
