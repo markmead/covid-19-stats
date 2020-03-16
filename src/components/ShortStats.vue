@@ -3,7 +3,8 @@
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl leading-9 font-extrabold text-white sm:text-4xl sm:leading-10">
-          Global stats for Coronavirus (COVID-19)
+          {{ title || 'Global' }}
+          stats for Coronavirus (COVID-19)
         </h2>
         <p class="mt-3 text-xl leading-7 text-indigo-200 sm:mt-4">
           Last Update: {{ stats.lastUpdate | formatDateTime }}
@@ -41,6 +42,6 @@
 
 <script>
   export default {
-    props: ['stats']
+    props: ['stats', 'title']
   }
 </script>

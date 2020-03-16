@@ -1,7 +1,8 @@
 <template>
-  <Layout title="Dashboard">
+  <Layout :title="$context.title">
     <div v-if="!stats">Loading</div>
-    <ShortStats v-else :stats="stats" />
+    <ShortStats v-else :stats="stats" :title="$context.title" />
+    {{ this.$context.query }}
   </Layout>
 </template>
 
@@ -10,9 +11,6 @@
   import ShortStats from '~/components/ShortStats'
 
   export default {
-    metaInfo: {
-      title: 'Coronavirus Dashboard'
-    },
     data() {
       return {
         stats: '',
@@ -23,9 +21,8 @@
     },
     async mounted() {
       await axios
-        .get('https://covid19.mathdro.id/api')
-        .then(res => (this.stats = res.data))
-        .catch(error => console.log(error))
+        .get(`https://covid19.mathdro.id/api/countries/${this.$context.query}`)
+        .then(res => this.stats = res.data)
     }
   }
 </script>

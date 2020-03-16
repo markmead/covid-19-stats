@@ -23,7 +23,17 @@ module.exports = function (api) {
     }
   })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+  api.createManagedPages(async ({ createPage }) => {
+    const { data } = await axios.get('https://covid19.mathdro.id/api/countries')
+    for(const item of Object.keys(data.countries)) {
+      createPage({
+        path: `/country/${item.replace(/\s+/g, '-').toLowerCase()}`,
+        component: './src/templates/Country.vue',
+        context: {
+          title: item,
+          query: item.replace(/\s+/g, '-').toLowerCase()
+        }
+      })
+    }
   })
 }
