@@ -43,7 +43,7 @@
                       </a>
                     </div>
                     <div class="mt-1 text-xs leading-4 font-medium text-gray-500">
-                      Couch icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">www.flaticon.com</a>
+                      Cough icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">www.flaticon.com</a>
                     </div>
                   </div>
                 </div>
@@ -88,7 +88,7 @@
                     </a>
                   </div>
                   <div class="mt-1 text-xs leading-4 font-medium text-gray-500">
-                    Couch icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">www.flaticon.com</a>
+                    Cough icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" class="transition ease-in duration-150 hover:text-gray-900">www.flaticon.com</a>
                   </div>
                 </div>
               </div>
