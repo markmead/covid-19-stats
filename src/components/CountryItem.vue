@@ -6,7 +6,7 @@
       tabindex="0">
       <div class="px-4 py-4 sm:px-6">
         <div class="flex items-center">
-          <flag :iso="code.toLowerCase()" />
+          <span class="flag-icon" :class="className" :title="country"></span>
           <div class="text-sm leading-5 font-medium ml-2">
             <span class="text-indigo-600 mr-2">{{ country }}</span>
             <sup class="text-gray-400">{{ code }}</sup>
@@ -20,6 +20,14 @@
 <script>
   export default {
     name: 'CountryItem',
-    props: ['country', 'code']
+    props: ['country', 'code'],
+    data() {
+      return {
+        className: ''
+      }
+    },
+    mounted() {
+      this.className = `flag-icon-${this.code.toLowerCase()}`
+    }
   }
 </script>
