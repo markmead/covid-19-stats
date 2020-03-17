@@ -5,6 +5,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import vSelect from 'vue-select'
 
 import '~/main.css'
+import 'flag-icon-css/css/flag-icon.css'
 
 import moment from 'moment'
 
