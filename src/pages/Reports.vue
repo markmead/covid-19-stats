@@ -43,6 +43,7 @@
         node {
           id
           reportDate
+          reportDateString
           totalConfirmed
           mainlandChina
           otherLocations

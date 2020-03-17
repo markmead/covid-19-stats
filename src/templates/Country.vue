@@ -5,7 +5,7 @@
       Back to countries
     </g-link>
     <div v-if="loading">Loading</div>
-    <NoData v-if="error" />
+    <NoData v-if="error" location="Countries" url="/countries" />
     <ShortStats v-if="!loading && !error" :stats="stats" :title="$context.title" />
   </Layout>
 </template>

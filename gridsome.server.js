@@ -15,12 +15,40 @@ module.exports = function (api) {
     for(const reportData of reportsData.data) {
       reportsCollection.addNode({
         reportDate: reportData.reportDate,
+        reportDateString: reportData.reportDateString,
         totalConfirmed: reportData.totalConfirmed,
         mainlandChina: reportData.mainlandChina,
         otherLocations: reportData.otherLocations,
         totalRecovered: reportData.totalRecovered,
       })
     }
+  })
+
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(`{
+      allReports {
+        edges {
+          node {
+            id
+            reportDate
+            reportDateString
+          }
+        }
+      }
+    }`)
+
+    data.allReports.edges.forEach(({ node }) => {
+      const path = node.reportDateString.replace(new RegExp('/', 'g'), '-')
+
+      createPage({
+        path: `/report/${path}`,
+        component: './src/templates/Report.vue',
+        context: {
+          dateTime: node.reportDate,
+          date: path
+        }
+      })
+    })
   })
 
   api.createManagedPages(async ({ createPage }) => {

@@ -139,7 +139,8 @@
       NavigationLink
     },
     mounted() {
-      this.flagClass = `flag-icon-${this.countryCode.toLowerCase()}`
+      if(this.countryCode)
+        this.flagClass = `flag-icon-${this.countryCode.toLowerCase()}`
     }
   }
 </script>
