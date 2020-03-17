@@ -15,8 +15,8 @@
     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
       {{ item.node.totalRecovered || 0 | formatNumber }}
     </td>
-    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-      <g-link :to="`/report/${item.node.reportDateString.replace(new RegExp('/', 'g'), '-')}`">Link</g-link>
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 transition duration ease-in-out hover:text-indigo-600">
+      <g-link :to="`/report/${item.node.reportDateString.replace(new RegExp('/', 'g'), '-')}`">View Report</g-link>
     </td>
   </tr>
 </template>

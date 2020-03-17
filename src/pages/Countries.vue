@@ -1,14 +1,7 @@
 <template>
   <Layout title="Countries">
     <div class="mb-5">
-      <label for="countrySearch" class="sr-only">Search for a country</label>
-      <div class="relative rounded-md shadow-sm">
-        <input
-          v-model="search"
-          id="countrySearch"
-          class="form-input block w-full sm:text-sm sm:leading-5"
-          placeholder="Enter country name" />
-      </div>
+      <Search v-model="search" />
     </div>
     <div class="bg-white shadow sm:rounded-md">
       <ul v-if="filteredCountries" class="md:grid md:grid-cols-2 lg:grid-cols-3">
@@ -25,6 +18,7 @@
 <script>
   import axios from 'axios'
   import CountryItem from '~/components/CountryItem'
+  import Search from '~/components/Search'
 
   export default {
     metaInfo: {
@@ -37,7 +31,8 @@
       }
     },
     components: {
-      CountryItem
+      CountryItem,
+      Search
     },
     computed: {
       filteredCountries() {
