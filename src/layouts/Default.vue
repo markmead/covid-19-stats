@@ -105,7 +105,8 @@
           </button>
         </div>
         <main class="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center">
+            <span v-if="countryCode" class="mr-4 text-2xl flag-icon" :class="flagClass" :title="title"></span>
             <h1 class="text-2xl font-semibold text-gray-900">{{ title }}</h1>
           </div>
 
@@ -129,12 +130,16 @@
   export default {
     data() {
       return {
-        sidebarOpen: false
+        sidebarOpen: false,
+        flagClass: ''
       }
     },
-    props: ['title'],
+    props: ['title', 'countryCode'],
     components: {
       NavigationLink
+    },
+    mounted() {
+      this.flagClass = `flag-icon-${this.countryCode.toLowerCase()}`
     }
   }
 </script>
