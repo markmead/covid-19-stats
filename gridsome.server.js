@@ -25,13 +25,17 @@ module.exports = function (api) {
 
   api.createManagedPages(async ({ createPage }) => {
     const { data } = await axios.get('https://covid19.mathdro.id/api/countries')
-    for(const item of Object.keys(data.countries)) {
+    for(const country of Object.keys(data.countries)) {
+      const path = country.replace(/\s+/g, '-').toLowerCase()
+      const code = data.countries[country]
+      const title = country
+
       createPage({
-        path: `/country/${item.replace(/\s+/g, '-').toLowerCase()}`,
+        path: `/country/${path}`,
         component: './src/templates/Country.vue',
         context: {
-          title: item,
-          query: item.replace(/\s+/g, '-').toLowerCase()
+          title: title,
+          code: code
         }
       })
     }

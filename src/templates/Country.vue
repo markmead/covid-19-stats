@@ -29,7 +29,7 @@
     },
     async mounted() {
       await axios
-        .get(`https://covid19.mathdro.id/api/countries/${this.$context.query}`)
+        .get(`https://covid19.mathdro.id/api/countries/${this.$context.code}`)
         .then(res => {
           this.loading = false
           this.stats = res.data
