@@ -13,7 +13,6 @@
     "gridsome": "^0.7.0",
     "moment": "^2.24.0",
     "tailwindcss": "^1.2.0-canary.8",
-    "vue-flag-icon": "^1.0.6",
     "vue-select": "^3.9.1"
   },
   "devDependencies": {

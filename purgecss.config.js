@@ -14,8 +14,9 @@ module.exports = {
     'a',
     'g-image',
     'g-image--lazy',
-    'g-image--loaded',
+    'g-image--loaded'
   ],
+  whitelistPatterns: [/flag-.*/],
   extractors: [
     {
       extractor: content => content.match(/[\w-/.:]+(?<!:)/g),

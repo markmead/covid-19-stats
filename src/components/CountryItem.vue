@@ -27,7 +27,7 @@
       }
     },
     mounted() {
-      this.className = `flag-icon-${this.code.toLowerCase()}`
+      this.className = `flag-icon-${this.code}`
     }
   }
 </script>
