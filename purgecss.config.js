@@ -14,7 +14,8 @@ module.exports = {
     'a',
     'g-image',
     'g-image--lazy',
-    'g-image--loaded'
+    'g-image--loaded',
+    'mode-dark'
   ],
   whitelistPatterns: [/flag-.*/],
   extractors: [

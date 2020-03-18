@@ -1,9 +1,17 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'black-muted': '#0f1117'
+      }
+    },
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus']
+    backgroundColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd'],
+    textColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'group-focus', 'dark']
   },
-  plugins: [require('@tailwindcss/ui')],
+  plugins: [
+    require('@tailwindcss/ui'),
+    require('tailwindcss-dark-mode')()
+  ]
 }

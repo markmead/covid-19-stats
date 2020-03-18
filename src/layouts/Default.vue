@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-screen flex overflow-hidden bg-gray-100">
+    <div class="h-screen flex overflow-hidden bg-gray-100 dark:bg-gray-900">
       <!-- Off-canvas menu for mobile -->
       <div v-show="sidebarOpen" class="lg:hidden">
         <div @click="sidebarOpen = false" v-show="sidebarOpen" class="fixed inset-0 z-30 transition-opacity ease-linear duration-300">
@@ -58,14 +58,20 @@
 
       <!-- Static sidebar for desktop -->
       <div class="hidden lg:flex lg:flex-shrink-0">
-        <div class="flex flex-col w-64 border-r border-gray-200 bg-white">
+        <div class="flex flex-col w-64 border-r border-gray-200 bg-white dark:bg-black-muted">
           <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
               <g-image class="h-10 w-auto" src="~/cough.svg" alt="Cough" immediate="true" />
               <span class="ml-2 text-lg font-medium">Coronavirus</span>
             </div>
+            <div class="px-2 mt-4">
+              <span class="mb-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-orange-100 text-orange-800">
+                Still in development
+              </span>
+              <ThemeToggle v-on:update-theme="theme = $event" />
+            </div>
             <!-- Sidebar component, swap this element with another sidebar if you like -->
-            <nav class="mt-5 flex-1 px-2 bg-white">
+            <nav class="mt-4 flex-1 px-2 bg-white dark:bg-black-muted">
               <NavigationLink url="/" title="Dashboard">
                 <svg class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
               </NavigationLink>
@@ -107,7 +113,7 @@
         <main class="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center">
             <span v-if="countryCode" class="mr-4 text-2xl flag-icon" :class="flagClass" :title="title"></span>
-            <h1 class="text-2xl font-semibold text-gray-900">{{ title }}</h1>
+            <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ title }}</h1>
           </div>
 
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -125,22 +131,43 @@
 
 <script>
   import NavigationLink from '~/components/NavigationLink'
+  import ThemeToggle from '~/components/ThemeToggle'
   import axios from 'axios'
 
   export default {
+    metaInfo() {
+      return {
+        htmlAttrs: {
+          class: `mode-${this.theme}`
+        },
+      }
+    },
     data() {
       return {
         sidebarOpen: false,
-        flagClass: ''
+        flagClass: '',
+        theme: 'light'
       }
     },
     props: ['title', 'countryCode'],
     components: {
-      NavigationLink
+      NavigationLink,
+      ThemeToggle
     },
     mounted() {
-      if(this.countryCode)
-        this.flagClass = `flag-icon-${this.countryCode.toLowerCase()}`
+      if(this.countryCode) this.flagClass = `flag-icon-${this.countryCode.toLowerCase()}`
+
+      // if(localStorage.getItem('theme')) {
+      //   this.theme = localStorage.theme
+      // } else {
+      //   if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      //     this.theme = 'dark'
+      //     localStorage.setItem('theme', 'dark')
+      //   } else {
+      //     this.theme = 'light'
+      //     localStorage.setItem('theme', 'light')
+      //   }
+      // }
     }
   }
 </script>
