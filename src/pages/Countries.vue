@@ -38,7 +38,10 @@
       filteredCountries() {
         if(!this.countries) return
         Object.filter = (obj, predicate) => Object.fromEntries(Object.entries(obj).filter(predicate))
-        return Object.filter(this.countries, ([country, code]) => country.toLowerCase().includes(this.search.toLowerCase()))
+        
+        return Object.filter(this.countries, ([country, code]) => {
+          return country.toLowerCase().includes(this.search.toLowerCase())
+        })
       }
     },
     async mounted() {

@@ -6,11 +6,11 @@
       </div>
       <div class="mt-3 text-center sm:mt-5">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
-          Sorry, we have no data!
+          Sorry, we have are still gathering data!
         </h3>
         <div class="mt-2">
           <p class="text-sm leading-5 text-gray-500">
-            This does not mean there's no cases of COVID-19 (Coranavirus)
+            This does not mean there's no cases of COVID-19
           </p>
         </div>
       </div>
