@@ -1,14 +1,9 @@
 module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        'black-muted': '#0f1117'
-      }
-    },
-  },
+  theme: {},
   variants: {
-    backgroundColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd'],
-    textColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'group-focus', 'dark']
+    backgroundColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'dark-focus'],
+    textColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'dark-focus'],
+    borderColor: ['responsive', 'hover', 'group-hover', 'even', 'odd', 'focus', 'dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'dark-focus'],
   },
   plugins: [
     require('@tailwindcss/ui'),
