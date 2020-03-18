@@ -35,7 +35,7 @@
             {{ stats.deaths.value | formatNumber }}
           </p>
           <p class="mt-2 text-lg leading-6 font-medium text-indigo-200">
-            Dead
+            Deaths
           </p>
         </div>
       </div>

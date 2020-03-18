@@ -10,10 +10,10 @@
       {{ item.confirmed || 0 | formatNumber }}
     </td>
     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-      {{ item.deaths || 0 | formatNumber }}
+      {{ item.recovered || 0 | formatNumber }}
     </td>
     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-      {{ item.recovered || 0 | formatNumber }}
+      {{ item.deaths || 0 | formatNumber }}
     </td>
   </tr>
 </template>
