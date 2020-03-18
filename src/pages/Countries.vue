@@ -45,6 +45,7 @@
       await axios
         .get('https://covid19.mathdro.id/api/countries')
         .then(res => this.countries = res.data.countries)
+      console.log(this.countries)
     }
   }
 </script>

@@ -65,7 +65,6 @@
         .then(res => {
           this.loading = false
           this.stats = res.data
-          console.log(res.data)
         })
         .catch(error => {
           this.loading = false
