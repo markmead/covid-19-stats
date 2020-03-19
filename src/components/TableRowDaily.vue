@@ -1,18 +1,18 @@
 <template>
-  <tr class="odd:bg-white even:bg-gray-50">
-    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 capitalize">
+  <tr class="odd:bg-white even:bg-gray-50 dark-even:bg-indigo-800 dark-odd:bg-indigo-900">
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 dark:text-gray-200 capitalize">
       {{ item.provinceState || '---' }}
     </td>
-    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 capitalize">
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 dark:text-gray-200 capitalize">
       {{ item.countryRegion }}
     </td>
-    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 dark:text-gray-200">
       {{ item.confirmed || 0 | formatNumber }}
     </td>
-    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 dark:text-gray-200">
       {{ item.recovered || 0 | formatNumber }}
     </td>
-    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 dark:text-gray-200">
       {{ item.deaths || 0 | formatNumber }}
     </td>
   </tr>
