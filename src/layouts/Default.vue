@@ -3,13 +3,15 @@
     <div class="h-screen flex overflow-hidden bg-gray-100 dark:bg-indigo-800">
       <!-- Off-canvas menu for mobile -->
       <div v-show="sidebarOpen" class="lg:hidden">
-        <div @click="sidebarOpen = false" v-show="sidebarOpen" class="fixed inset-0 z-30 transition-opacity ease-linear duration-300">
+        <div class="fixed inset-0 z-30 transition-opacity ease-linear duration-300">
           <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
         </div>
         <div class="fixed inset-0 flex z-40">
-          <div x-show="sidebarOpen" class="flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-indigo-900 transform ease-in-out duration-300 ">
+          <div v-click-outside="sidebarClose"
+            class="flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-indigo-900 transform ease-in-out duration-300 ">
             <div class="absolute top-0 right-0 -mr-14 p-1">
-              <button v-show="sidebarOpen" @click="sidebarOpen = false" class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600 dark:text-gray-300 dark-hover:text-white focus:bg-indigo-700">
+              <button
+                @click="sidebarOpen = false" class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600 dark:text-gray-300 dark-hover:text-white focus:bg-indigo-700">
                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -130,9 +132,10 @@
 </template>
 
 <script>
+  import ClickOutside from 'vue-click-outside'
+  import axios from 'axios'
   import NavigationLink from '~/components/NavigationLink'
   import ThemeToggle from '~/components/ThemeToggle'
-  import axios from 'axios'
 
   export default {
     metaInfo() {
@@ -154,6 +157,13 @@
       NavigationLink,
       ThemeToggle
     },
+    methods: {
+      sidebarClose() {
+        if(this.sidebarOpen) {
+          this.sidebarOpen = false
+        }
+      }
+    },
     mounted() {
       if(this.countryCode) this.flagClass = `flag-icon-${this.countryCode.toLowerCase()}`
 
@@ -168,6 +178,7 @@
           localStorage.setItem('theme', 'light')
         }
       }
-    }
+    },
+    directives: { ClickOutside }
   }
 </script>
