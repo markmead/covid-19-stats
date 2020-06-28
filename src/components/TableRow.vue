@@ -18,7 +18,7 @@
     <td
       class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap transition ease-in-out dark:text-gray-200 duration hover:text-indigo-600 dark-hover:text-white"
     >
-      <g-link :to="`/report/${item.node.reportDate.replace(new RegExp('/', 'g'), '-')}`">View Report</g-link>
+      <g-link :to="`/report/${item.node.reportDate}`">View Report</g-link>
     </td>
   </tr>
 </template>

@@ -15,14 +15,11 @@ module.exports = {
     `)
 
     data.allReports.edges.forEach(({ node }) => {
-      const path = node.reportDate.replace(/\//g, '-')
-
       createPage({
-        path: `/report/${path}`,
+        path: `/report/${node.reportDate}`,
         component: './src/templates/Report.vue',
         context: {
-          date: path,
-          dateTime: node.reportDate,
+          date: node.reportDate,
         },
       })
     })
