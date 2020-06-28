@@ -5,14 +5,13 @@ module.exports = {
     const reports = await axios.get('https://covid19.mathdro.id/api/daily')
     const collection = actions.addCollection('Reports')
 
-    for(const report of reports.data) {
+    for (const report of reports.data) {
       collection.addNode({
         reportDate: report.reportDate,
-        reportDateString: report.reportDateString,
         totalConfirmed: report.totalConfirmed,
         mainlandChina: report.mainlandChina,
         otherLocations: report.otherLocations,
-        totalRecovered: report.totalRecovered
+        totalRecovered: report.totalRecovered,
       })
     }
   },
@@ -21,11 +20,11 @@ module.exports = {
     const countries = data.countries
     const collection = actions.addCollection('Countries')
 
-    for(const country of Object.keys(countries)) {
+    for (const country of Object.keys(countries)) {
       collection.addNode({
         countryName: country,
-        countryCode: countries[country]
+        countryCode: countries[country],
       })
     }
-  }
+  },
 }
