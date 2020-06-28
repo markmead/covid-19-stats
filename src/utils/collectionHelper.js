@@ -20,10 +20,10 @@ module.exports = {
     const countries = data.countries
     const collection = actions.addCollection('Countries')
 
-    for (const country of Object.keys(countries)) {
+    for (const country of countries) {
       collection.addNode({
-        countryName: country,
-        countryCode: countries[country],
+        countryName: country.name,
+        countryCode: country.iso3,
       })
     }
   },
