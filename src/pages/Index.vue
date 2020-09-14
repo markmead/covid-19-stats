@@ -24,9 +24,6 @@
                   class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
                 >Confirmed</th>
                 <th
-                  class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >Recovered</th>
-                <th
                   class="px-6 py-3 border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700"
                 ></th>
               </tr>
@@ -51,7 +48,6 @@
           totalConfirmed
           mainlandChina
           otherLocations
-          totalRecovered
         }
       }
     }
@@ -66,22 +62,22 @@ import TableRow from '~/components/TableRow'
 
 export default {
   metaInfo: {
-    title: 'Dashboard'
+    title: 'Dashboard',
   },
   data() {
     return {
-      stats: ''
+      stats: '',
     }
   },
   components: {
     ShortStats,
-    TableRow
+    TableRow,
   },
   async mounted() {
     await axios
       .get('https://covid19.mathdro.id/api')
-      .then(res => (this.stats = res.data))
-      .catch(error => console.log(error))
-  }
+      .then((res) => (this.stats = res.data))
+      .catch((error) => console.log(error))
+  },
 }
 </script>

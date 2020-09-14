@@ -11,7 +11,6 @@ module.exports = {
         totalConfirmed: report.totalConfirmed,
         mainlandChina: report.mainlandChina,
         otherLocations: report.otherLocations,
-        totalRecovered: report.totalRecovered,
       })
     }
   },

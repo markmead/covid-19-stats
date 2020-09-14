@@ -13,9 +13,6 @@
       class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap dark:text-gray-200"
     >{{ item.node.totalConfirmed || 0 | formatNumber }}</td>
     <td
-      class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap dark:text-gray-200"
-    >{{ item.node.totalRecovered || 0 | formatNumber }}</td>
-    <td
       class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap transition ease-in-out dark:text-gray-200 duration hover:text-indigo-600 dark-hover:text-white"
     >
       <g-link :to="`/report/${item.node.reportDate}`">View Report</g-link>
@@ -26,6 +23,6 @@
 <script>
 export default {
   name: 'TableRow',
-  props: ['item']
+  props: ['item'],
 }
 </script>
