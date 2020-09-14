@@ -6,15 +6,13 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 
 module.exports = {
   siteName: 'COVID-19',
-  siteUrl: 'https://covid-19-stats.netlify.com',
+  siteUrl: 'https://www.covid-stats.co.uk/',
   plugins: [
     { use: '@gridsome/plugin-sitemap' },
     {
-      use: 'gridsome-plugin-gtm',
+      use: '@gridsome/plugin-google-analytics',
       options: {
         id: 'UA-177960351-1',
-        enabled: true,
-        debug: true,
       },
     },
   ],
