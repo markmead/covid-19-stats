@@ -19,7 +19,6 @@
     "vue-click-outside": "^1.0.7"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.0",
     "typeface-inter": "^3.12.0"
   }
 }

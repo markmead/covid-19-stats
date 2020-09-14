@@ -3,14 +3,13 @@ import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 
 import 'typeface-inter'
-
 import 'flag-icon-css/css/flag-icon.css'
 
 import '~/main.css'
 
 dayjs.extend(LocalizedFormat)
 
-export default function(Vue, { router, head, isClient }) {
+export default function(Vue) {
   Vue.component('Layout', DefaultLayout)
 
   Vue.filter('formatDate', (value) => dayjs(new Date(value)).format('LL'))

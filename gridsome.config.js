@@ -1,9 +1,3 @@
-const tailwind = require('tailwindcss')
-const purgecss = require('@fullhuman/postcss-purgecss')
-const postcssPlugins = [tailwind()]
-
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
-
 module.exports = {
   siteName: 'COVID-19',
   siteUrl: 'https://www.covid-stats.co.uk/',
@@ -19,7 +13,7 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        plugins: postcssPlugins,
+        plugins: [require('tailwindcss')],
       },
     },
   },
