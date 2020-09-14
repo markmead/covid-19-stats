@@ -77,7 +77,7 @@
               <div class="block group focus:outline-none">
                 <div class="flex items-center">
                   <div>
-                    <div class="text-xs font-medium leading-4 text-gray-500 dark:text-gray-300">
+                    <div class="text-xs font-medium leading-none text-gray-500 dark:text-gray-300">
                       COVID-19 API from
                       <a
                         href="https://github.com/mathdroid/covid-19-api"
@@ -87,7 +87,7 @@
                         mathdroid
                       </a>
                     </div>
-                    <div class="mt-1 text-xs font-medium leading-4 text-gray-500 dark:text-gray-300">
+                    <div class="mt-1 text-xs font-medium leading-none text-gray-500 dark:text-gray-300">
                       Cough icon made by
                       <a
                         href="https://www.flaticon.com/authors/freepik"
@@ -123,7 +123,7 @@
             </div>
             <div class="px-2 mt-4">
               <span
-                class="mb-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-orange-100 text-orange-800 dark:bg-indigo-700 dark:text-gray-300"
+                class="mb-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-none bg-orange-100 text-orange-800 dark:bg-indigo-700 dark:text-gray-300"
               >
                 Still in development
               </span>
@@ -181,7 +181,7 @@
             <div class="block group focus:outline-none">
               <div class="flex items-center">
                 <div>
-                  <div class="text-xs font-medium leading-4 text-gray-500 dark:text-gray-300">
+                  <div class="text-xs font-medium leading-none text-gray-500 dark:text-gray-300">
                     COVID-19 API from
                     <a
                       href="https://github.com/mathdroid/covid-19-api"
@@ -191,7 +191,7 @@
                       mathdroid
                     </a>
                   </div>
-                  <div class="mt-1 text-xs font-medium leading-4 text-gray-500 dark:text-gray-300">
+                  <div class="mt-1 text-xs font-medium leading-none text-gray-500 dark:text-gray-300">
                     Cough icon made by
                     <a
                       href="https://www.flaticon.com/authors/freepik"

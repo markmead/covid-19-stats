@@ -8,7 +8,7 @@
       <div class="px-4 py-4 sm:px-6">
         <div class="flex items-center">
           <span class="flag-icon" :class="className" :title="country.name"></span>
-          <div class="ml-2 text-sm font-medium leading-5">
+          <div class="ml-2 text-sm font-medium leading-none">
             <span class="mr-2 text-indigo-600 dark:text-gray-200">{{ country.name }}</span>
             <sup class="text-gray-400 dark:text-gray-300">{{ country.iso3 }}</sup>
           </div>
@@ -24,13 +24,13 @@ export default {
   props: ['country'],
   data() {
     return {
-      className: ''
+      className: '',
     }
   },
   mounted() {
     if (this.country.iso3) {
       this.className = `flag-icon-${this.country.iso2.toLowerCase()}`
     }
-  }
+  },
 }
 </script>
