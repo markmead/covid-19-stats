@@ -12,6 +12,7 @@
           >
             <div class="absolute top-0 right-0 p-1 -mr-14">
               <button
+                aria-label="Toggle sidebar close"
                 @click="sidebarOpen = false"
                 class="flex items-center justify-center w-12 h-12 rounded-full focus:outline-none focus:bg-gray-600 dark:text-gray-300 dark-hover:text-white focus:bg-indigo-700"
               >
