@@ -1,15 +1,19 @@
 import DefaultLayout from '~/layouts/Default.vue'
-import '~/main.css'
+import dayjs from 'dayjs'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 
-import moment from 'moment'
+import 'typeface-inter'
+
 import 'flag-icon-css/css/flag-icon.css'
 
-require('typeface-inter')
+import '~/main.css'
 
-export default function (Vue, { router, head, isClient }) {
+dayjs.extend(LocalizedFormat)
+
+export default function(Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
 
-  Vue.filter('formatDate', value => moment(new Date(value)).format('LL'))
-  Vue.filter('formatDateTime', value => moment(new Date(value)).format('LLL'))
-  Vue.filter('formatNumber', value => Number(value).toLocaleString())
+  Vue.filter('formatDate', (value) => dayjs(new Date(value)).format('LL'))
+  Vue.filter('formatDateTime', (value) => dayjs(new Date(value)).format('LLL'))
+  Vue.filter('formatNumber', (value) => Number(value).toLocaleString())
 }
