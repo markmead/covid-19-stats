@@ -1,7 +1,6 @@
 <template>
   <Layout title="Dashboard">
-    <div v-if="!stats">Loading</div>
-    <ShortStats v-else :stats="stats" />
+    <ShortStats :stats="stats" v-if="stats" />
 
     <div class="flex flex-col mt-5">
       <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
@@ -11,21 +10,11 @@
           <table class="min-w-full">
             <thead>
               <tr>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >Date</th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >China</th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >Worldwide</th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >Confirmed</th>
-                <th
-                  class="px-6 py-3 border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700"
-                ></th>
+                <TableHeading text="Date" />
+                <TableHeading text="China" />
+                <TableHeading text="Worldwide" />
+                <TableHeading text="Confirmed" />
+                <TableHeading text />
               </tr>
             </thead>
             <tbody>
@@ -56,27 +45,29 @@
 
 <script>
 import axios from 'axios'
+
 import ShortStats from '~/components/ShortStats'
 import TableRow from '~/components/TableRow'
+import TableHeading from '@/components/table/Heading'
 
 export default {
   metaInfo: {
-    title: 'Dashboard',
+    title: 'Latest COVID Cases',
   },
   data() {
     return {
-      stats: '',
+      stats: null,
     }
   },
   components: {
     ShortStats,
     TableRow,
+    TableHeading,
   },
   async mounted() {
     await axios
       .get('https://covid19.mathdro.id/api')
       .then((res) => (this.stats = res.data))
-      .catch((error) => console.log(error))
   },
 }
 </script>

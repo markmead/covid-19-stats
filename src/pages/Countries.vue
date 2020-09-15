@@ -5,7 +5,11 @@
     </div>
     <div class="bg-white shadow dark:bg-indigo-700 sm:rounded-md">
       <ul v-if="filteredCountries" class="md:grid md:grid-cols-2 lg:grid-cols-3">
-        <CountryItem v-for="country in this.filteredCountries" :key="country.iso3" :country="country" />
+        <CountryItem
+          v-for="country in this.filteredCountries"
+          :key="country.iso3"
+          :country="country"
+        />
       </ul>
     </div>
   </Layout>
@@ -33,7 +37,8 @@ export default {
   computed: {
     filteredCountries() {
       if (!this.countries) return
-      Object.filter = (obj, predicate) => Object.fromEntries(Object.entries(obj).filter(predicate))
+      Object.filter = (obj, predicate) =>
+        Object.fromEntries(Object.entries(obj).filter(predicate))
 
       return Object.filter(this.countries, ([country, code]) => {
         return code.name.toLowerCase().includes(this.search.toLowerCase())
@@ -41,7 +46,9 @@ export default {
     },
   },
   async mounted() {
-    await axios.get('https://covid19.mathdro.id/api/countries').then((res) => (this.countries = res.data.countries))
+    await axios
+      .get('https://covid19.mathdro.id/api/countries')
+      .then((res) => (this.countries = res.data.countries))
   },
 }
 </script>

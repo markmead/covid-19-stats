@@ -2,9 +2,9 @@
   <Layout title="Latest Reports">
     <div class="relative mb-8 bg-indigo-600 rounded">
       <div class="max-w-5xl p-4 mx-auto text-center">
-        <p class="leading-tight text-white">
-          Reports no longer have accurate data for total recovered, therefore it's been removed.
-        </p>
+        <p
+          class="leading-tight text-white"
+        >Reports no longer have accurate data for total recovered, therefore it's been removed.</p>
       </div>
     </div>
 
@@ -16,29 +16,11 @@
           <table class="min-w-full">
             <thead>
               <tr>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >
-                  Date
-                </th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >
-                  China
-                </th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >
-                  Worldwide
-                </th>
-                <th
-                  class="px-6 py-3 text-xs font-medium leading-none tracking-wider text-gray-500 uppercase border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700 dark:text-gray-200"
-                >
-                  Confirmed
-                </th>
-                <th
-                  class="px-6 py-3 border-b border-gray-200 dark:border-indigo-700 bg-gray-50 dark:bg-indigo-700"
-                ></th>
+                <TableHeading text="Date" />
+                <TableHeading text="China" />
+                <TableHeading text="Worldwide" />
+                <TableHeading text="Confirmed" />
+                <TableHeading text />
               </tr>
             </thead>
             <tbody>
@@ -70,12 +52,15 @@
 <script>
 import TableRow from '~/components/TableRow'
 
+import TableHeading from '@/components/table/Heading'
+
 export default {
   metaInfo: {
     title: 'Latest Reports',
   },
   components: {
     TableRow,
+    TableHeading,
   },
 }
 </script>

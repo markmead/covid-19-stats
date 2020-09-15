@@ -1,51 +1,37 @@
 <template>
   <Layout :title="$context.title" :countryCode="$context.icon">
-    <g-link
-      to="/countries"
-      class="inline-flex items-center mb-5 text-sm font-medium leading-none text-gray-600 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900 dark:text-gray-200 dark-hover:text-white"
-    >
-      <svg
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        class="w-6 h-6 mr-2 text-gray-400 transition duration-150 ease-in-out dark:text-gray-300 group-hover:text-gray-500 dark-group-hover:text-gray-200"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-      </svg>
-      Back to countries
-    </g-link>
-    <div v-if="loading" class="dark:text-gray-200">Loading</div>
+    <NavigationBack to="/countries" text="Back to countries" />
     <NoData v-if="error" location="Countries" url="/countries" />
-    <ShortStats v-if="!loading && !error" :stats="stats" :title="$context.title" />
+    <ShortStats v-if="!error && stats" :stats="stats" :title="$context.title" />
   </Layout>
 </template>
 
 <script>
 import axios from 'axios'
+
 import ShortStats from '~/components/ShortStats'
 import NoData from '~/components/NoData'
+import NavigationBack from '@/components/navigation/Back'
 
 export default {
   data() {
     return {
-      stats: '',
-      loading: true,
+      stats: null,
       error: false,
     }
   },
   components: {
     ShortStats,
     NoData,
+    NavigationBack,
   },
   async mounted() {
     await axios
       .get(`https://covid19.mathdro.id/api/countries/${this.$context.code}`)
       .then((res) => {
-        this.loading = false
         this.stats = res.data
       })
-      .catch((error) => {
-        this.loading = false
+      .catch(() => {
         this.error = true
       })
   },
