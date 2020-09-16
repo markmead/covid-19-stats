@@ -22,7 +22,7 @@ import Search from '~/components/Search'
 
 export default {
   metaInfo: {
-    title: 'Countries Affected',
+    title: 'Countries Affected by Coronavirus',
   },
   data() {
     return {
