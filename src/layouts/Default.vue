@@ -22,13 +22,10 @@
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
               <SidebarLogo />
               <div class="px-2 mt-4">
-                <span
-                  class="mb-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-none bg-orange-100 text-orange-800 dark:bg-indigo-700 dark:text-gray-300"
-                >Still in development</span>
                 <ThemeToggle v-on:update-theme="theme = $event" />
               </div>
               <nav class="px-2 mt-4">
-                <NavigationLink url="/" title="Dashboard">
+                <NavigationLink url="/" title="Home">
                   <SidebarHomeIcon />
                 </NavigationLink>
                 <NavigationLink url="/reports" title="Reports">
@@ -52,13 +49,10 @@
           <div class="flex flex-col flex-1 h-0 pt-5 pb-4 overflow-y-auto">
             <SidebarLogo />
             <div class="px-2 mt-4">
-              <span
-                class="mb-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-none bg-orange-100 text-orange-800 dark:bg-indigo-700 dark:text-gray-300"
-              >Still in development</span>
               <ThemeToggle v-on:update-theme="theme = $event" />
             </div>
             <nav class="flex-1 px-2 mt-4 bg-white dark:bg-indigo-900">
-              <NavigationLink url="/" title="Dashboard">
+              <NavigationLink url="/" title="Home">
                 <SidebarHomeIcon />
               </NavigationLink>
               <NavigationLink url="/reports" title="Reports">

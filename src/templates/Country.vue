@@ -14,6 +14,11 @@ import NoData from '~/components/NoData'
 import NavigationBack from '@/components/navigation/Back'
 
 export default {
+  metaInfo() {
+    return {
+      title: `Latest COVID Cases for ${this.$context.title}`,
+    }
+  },
   data() {
     return {
       stats: null,

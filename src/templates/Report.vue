@@ -18,7 +18,6 @@
                 <TableHeading text="Country" />
                 <TableHeading text="Confirmed" />
                 <TableHeading text="Deaths" />
-                <TableHeading text="Deaths" />
               </tr>
             </thead>
             <tbody>
@@ -33,6 +32,10 @@
 
 <script>
 import axios from 'axios'
+import dayjs from 'dayjs'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
+
+dayjs.extend(LocalizedFormat)
 
 import TableRowDaily from '~/components/TableRowDaily'
 import NoData from '~/components/NoData'
@@ -41,6 +44,13 @@ import TableHeading from '@/components/table/Heading'
 import NavigationBack from '@/components/navigation/Back'
 
 export default {
+  metaInfo() {
+    return {
+      title: `Coronavirus Report for ${dayjs(
+        new Date(this.$context.date)
+      ).format('LL')}`,
+    }
+  },
   data() {
     return {
       error: false,

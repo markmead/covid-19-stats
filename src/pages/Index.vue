@@ -1,5 +1,5 @@
 <template>
-  <Layout title="Dashboard">
+  <Layout title="Home">
     <ShortStats :stats="stats" v-if="stats" />
 
     <div class="flex flex-col mt-5">
@@ -52,7 +52,7 @@ import TableHeading from '@/components/table/Heading'
 
 export default {
   metaInfo: {
-    title: 'Latest COVID Cases',
+    title: 'Global Coronavirus Cases',
   },
   data() {
     return {

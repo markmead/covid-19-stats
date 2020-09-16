@@ -56,7 +56,7 @@ import TableHeading from '@/components/table/Heading'
 
 export default {
   metaInfo: {
-    title: 'Latest Reports',
+    title: 'Daily Global Reports of Coronavirus',
   },
   components: {
     TableRow,

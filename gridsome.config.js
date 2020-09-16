@@ -1,6 +1,6 @@
 module.exports = {
-  siteName: 'COVID-19',
-  siteUrl: 'https://www.covid-stats.co.uk/',
+  siteName: 'COVID Cases',
+  siteUrl: 'https://www.covid-cases.co.uk/',
   plugins: [
     { use: '@gridsome/plugin-sitemap' },
     {
