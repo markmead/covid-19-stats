@@ -1,1 +1,3 @@
-## COVID 19 Stats
+## COVID Breakdown
+
+Easy to read statistics for Coronavirus around the world
