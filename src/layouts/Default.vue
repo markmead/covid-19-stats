@@ -2,7 +2,9 @@
   <div>
     <div class="flex h-screen overflow-hidden bg-gray-100 dark:bg-indigo-800">
       <div v-show="sidebarOpen" class="lg:hidden">
-        <div class="fixed inset-0 z-30 transition-opacity duration-300 ease-linear">
+        <div
+          class="fixed inset-0 z-30 transition-opacity duration-300 ease-linear"
+        >
           <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
         </div>
         <div class="fixed inset-0 z-40 flex">
@@ -76,7 +78,9 @@
             <SidebarHamburgerIcon />
           </button>
         </div>
-        <main class="relative z-0 flex-1 pt-2 pb-6 overflow-y-auto focus:outline-none md:py-6">
+        <main
+          class="relative z-0 flex-1 pt-2 pb-6 overflow-y-auto focus:outline-none md:py-6"
+        >
           <div class="flex items-center px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
             <span
               v-if="countryCode"
@@ -84,7 +88,9 @@
               :class="flagClass"
               :title="title"
             ></span>
-            <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ title }}</h1>
+            <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">
+              {{ title }}
+            </h1>
           </div>
 
           <div class="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">

@@ -5,7 +5,7 @@
       <input
         @input="$emit('input', $event.target.value)"
         id="countrySearch"
-        class="form-input block w-full sm:text-sm sm:leading-none py-3 dark:bg-indigo-600 dark:border-indigo-500 dark:text-gray-200"
+        class="block w-full py-3 form-input sm:text-sm sm:leading-none dark:bg-indigo-600 dark:border-indigo-500 dark:text-gray-200"
         placeholder="Enter country name"
       />
     </div>

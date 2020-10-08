@@ -21,7 +21,11 @@
               </tr>
             </thead>
             <tbody>
-              <TableRowDaily v-for="(stat, index) in stats" :item="stat" :key="index" />
+              <TableRowDaily
+                v-for="(stat, index) in stats"
+                :item="stat"
+                :key="index"
+              />
             </tbody>
           </table>
         </div>

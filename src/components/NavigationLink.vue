@@ -1,8 +1,8 @@
 <template>
   <g-link
     :to="url"
-    class="mt-1 group flex items-center p-2 text-sm leading-none font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-100 dark-focus:bg-indigo-800 transition ease-in-out duration-150 dark:text-gray-100 dark-hover:text-white dark-hover:bg-indigo-700"
-    exact-active-class="text-gray-900 dark:text-white rounded-md bg-gray-100 dark:bg-indigo-700 app-link-exact-active"
+    class="flex items-center p-2 mt-1 text-sm font-medium leading-none text-gray-600 transition duration-150 ease-in-out rounded-md group hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-100 dark-focus:bg-indigo-800 dark:text-gray-100 dark-hover:text-white dark-hover:bg-indigo-700"
+    exact-active-class="text-gray-900 bg-gray-100 rounded-md dark:text-white dark:bg-indigo-700 app-link-exact-active"
   >
     <slot />
     {{ title }}

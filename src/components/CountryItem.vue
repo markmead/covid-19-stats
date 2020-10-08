@@ -7,10 +7,18 @@
     >
       <div class="px-4 py-4 sm:px-6">
         <div class="flex items-center">
-          <span class="flag-icon" :class="className" :title="country.name"></span>
+          <span
+            class="flag-icon"
+            :class="className"
+            :title="country.name"
+          ></span>
           <div class="ml-2 text-sm font-medium leading-none">
-            <span class="mr-2 text-indigo-600 dark:text-gray-200">{{ country.name }}</span>
-            <sup class="text-gray-400 dark:text-gray-300">{{ country.iso3 }}</sup>
+            <span class="mr-2 text-indigo-600 dark:text-gray-200">{{
+              country.name
+            }}</span>
+            <sup class="text-gray-400 dark:text-gray-300">{{
+              country.iso3
+            }}</sup>
           </div>
         </div>
       </div>

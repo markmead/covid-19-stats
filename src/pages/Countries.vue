@@ -4,7 +4,10 @@
       <Search v-model="search" />
     </div>
     <div class="bg-white shadow dark:bg-indigo-700 sm:rounded-md">
-      <ul v-if="filteredCountries" class="md:grid md:grid-cols-2 lg:grid-cols-3">
+      <ul
+        v-if="filteredCountries"
+        class="md:grid md:grid-cols-2 lg:grid-cols-3"
+      >
         <CountryItem
           v-for="country in this.filteredCountries"
           :key="country.iso3"

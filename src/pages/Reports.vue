@@ -2,9 +2,10 @@
   <Layout title="Latest Reports">
     <div class="relative mb-8 bg-indigo-600 rounded">
       <div class="max-w-5xl p-4 mx-auto text-center">
-        <p
-          class="leading-tight text-white"
-        >Reports no longer have accurate data for total recovered, therefore it's been removed.</p>
+        <p class="leading-tight text-white">
+          Reports no longer have accurate data for total recovered, therefore
+          it's been removed.
+        </p>
       </div>
     </div>
 
@@ -24,7 +25,11 @@
               </tr>
             </thead>
             <tbody>
-              <TableRow v-for="edge in $page.reports.edges" :item="edge" :key="edge.node.id" />
+              <TableRow
+                v-for="edge in $page.reports.edges"
+                :item="edge"
+                :key="edge.node.id"
+              />
             </tbody>
           </table>
         </div>

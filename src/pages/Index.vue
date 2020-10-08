@@ -18,7 +18,11 @@
               </tr>
             </thead>
             <tbody>
-              <TableRow v-for="edge in $page.reports.edges" :item="edge" :key="edge.node.id" />
+              <TableRow
+                v-for="edge in $page.reports.edges"
+                :item="edge"
+                :key="edge.node.id"
+              />
             </tbody>
           </table>
         </div>
