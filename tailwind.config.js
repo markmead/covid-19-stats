@@ -15,7 +15,6 @@ module.exports = {
   },
   variants: {
     backgroundColor: [
-      'responsive',
       'hover',
       'group-hover',
       'even',
@@ -29,7 +28,6 @@ module.exports = {
       'dark-focus',
     ],
     textColor: [
-      'responsive',
       'hover',
       'group-hover',
       'even',
@@ -43,7 +41,6 @@ module.exports = {
       'dark-focus',
     ],
     borderColor: [
-      'responsive',
       'hover',
       'group-hover',
       'even',
